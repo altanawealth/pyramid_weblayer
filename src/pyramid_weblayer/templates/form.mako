@@ -6,12 +6,13 @@
       <%
         if label is None:
             label = name.replace('_', ' ').replace('-', ' ').title()
+        if not label.endswith(':'):
+            label += ':'
       %>
       <label class="control-label" for="${name}">
+        ${label}
         % if required:
-          ${label}<span class="required">*</span>
-        % else:
-          ${label}
+          <span class="required">*</span>
         % endif
       </label>
     % endif
@@ -48,12 +49,13 @@
       <%
         if label is None:
             label = name.replace('_', ' ').replace('-', ' ').title()
+        if not label.endswith(':'):
+            label += ':'
       %>
       <label class="control-label" for="${name}">
+        ${label}
         % if required:
-          ${label}<span class="required">*</span>
-        % else:
-          ${label}
+          <span class="required">*</span>
         % endif
       </label>
     % endif
